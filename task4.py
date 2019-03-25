@@ -13,3 +13,26 @@
 * Use main() function to test your solution.
 ===================================================
 """
+def product_digits(num):
+    if(num[0] == '-'):
+        num = num[1:]
+
+    if (num.isdigit()):
+        num = int(num)
+    else:
+        print("Wrong parameter")
+        return -1
+
+    prod = 1
+
+    while num > 0:
+        digit = num % 10
+        prod = prod * digit
+        num = num // 10
+    return prod
+
+def main():
+    num = input ("Insert a number: ")
+    print("Sum of digits is: ", product_digits(num))
+
+main()
