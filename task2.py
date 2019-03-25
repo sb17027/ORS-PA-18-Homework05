@@ -12,3 +12,26 @@
 *
 ===================================================
 """
+
+def char_occurences(str):
+    most_char = ""
+    i = 0
+    j = 0
+    current_occurences = 0
+    most_occurences = 0
+    while i < len(str):
+        while j < len(str):
+            if str[i] == str[j]:
+                current_occurences = current_occurences + 1
+            j = j + 1
+        if (current_occurences > most_occurences):
+            most_occurences = current_occurences
+            most_char = str[i]
+        i = i + 1
+        j = 0
+    print("Char with the most occurences: ", most_char)
+
+def main():
+    str = input("Insret string: ")
+    char_occurences(str)
+main()
